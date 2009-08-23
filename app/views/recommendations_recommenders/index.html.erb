@@ -1,0 +1,19 @@
+<% title "Recommendations Recommenders" %>
+
+<table>
+  <tr>
+    <th>Recommendation</th>
+    <th>Recommender</th>
+  </tr>
+  <% for recommendations_recommenders in @recommendations_recommenders %>
+    <tr>
+      <td><%=h recommendations_recommenders.recommendation_id %></td>
+      <td><%=h recommendations_recommenders.recommender_id %></td>
+      <td><%= link_to "Show", recommendations_recommenders %></td>
+      <td><%= link_to "Edit", edit_recommendations_recommenders_path(recommendations_recommenders) %></td>
+      <td><%= link_to "Destroy", recommendations_recommenders, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Recommendations Recommenders", new_recommendations_recommenders_path %></p>

@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :recommendations_recommenders
+
+  map.resources :recommendations
+
   map.resources :links
 
   map.login "login", :controller => "user_sessions", :action => "new"

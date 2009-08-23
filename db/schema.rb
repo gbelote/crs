@@ -9,11 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823013654) do
+ActiveRecord::Schema.define(:version => 20090823021254) do
 
   create_table "links", :force => true do |t|
     t.string   "url"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recommendations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "link_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recommendations_recommenders", :force => true do |t|
+    t.integer  "recommendation_id"
+    t.integer  "recommender_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

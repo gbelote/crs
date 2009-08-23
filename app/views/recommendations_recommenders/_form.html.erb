@@ -1,0 +1,12 @@
+<% form_for @recommendations_recommenders do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :recommendation_id %><br />
+    <%= f.text_field :recommendation_id %>
+  </p>
+  <p>
+    <%= f.label :recommender_id %><br />
+    <%= f.text_field :recommender_id %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

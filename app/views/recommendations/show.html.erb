@@ -1,0 +1,16 @@
+<% title "Recommendation" %>
+
+<p>
+  <strong>User:</strong>
+  <%=h @recommendation.user_id %>
+</p>
+<p>
+  <strong>Link:</strong>
+  <%=h @recommendation.link_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_recommendation_path(@recommendation) %> |
+  <%= link_to "Destroy", @recommendation, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", recommendations_path %>
+</p>
