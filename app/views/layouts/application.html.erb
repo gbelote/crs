@@ -16,6 +16,7 @@
         <% if @content_for_loginbox.nil? %>
           <% if current_user %>
             <i>Welcome, <%= current_user.username %>!</i>
+            <%= link_to "Post Something!", new_link_path, :class => 'post' %> |
             <%= link_to "Edit profile", edit_user_path(current_user) %> |
             <%= link_to "Logout", logout_path %>
           <% else %>

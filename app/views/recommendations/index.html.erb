@@ -1,19 +1,12 @@
 <% title "Recommendations" %>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Link</th>
-  </tr>
-  <% for recommendation in @recommendations %>
-    <tr>
-      <td><%=h recommendation.user_id %></td>
-      <td><%=h recommendation.link_id %></td>
-      <td><%= link_to "Show", recommendation %></td>
-      <td><%= link_to "Edit", edit_recommendation_path(recommendation) %></td>
-      <td><%= link_to "Destroy", recommendation, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<% if @recommendations.empty? %>
+  Nothing here for you ;_;
+<% else %>
+  <ul>
+    <% for recommendation in @recommendations %>
+      <li><%= link_to recommendation.link.title, recommendation.link.url %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-<p><%= link_to "New Recommendation", new_recommendation_path %></p>

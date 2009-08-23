@@ -1,6 +1,11 @@
 class RecommendationsController < ApplicationController
   def index
-    @recommendations = Recommendation.all
+    if current_user
+      @recommendations = Recommendation.find_all_by_user_id(current_user.id)
+    else
+      flash[:error] = "You need to be logged in to view your recommendations"
+      redirect_to login_path, :status => 302
+    end
   end
   
   def show

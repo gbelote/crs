@@ -83,3 +83,5 @@ a {
 #loginbox {
   float: right;
 }
+
+a.post { color: red; }
