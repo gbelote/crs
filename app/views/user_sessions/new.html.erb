@@ -1,4 +1,8 @@
-<% title "New User Session" %>
+<% title "Login" %>
+
+<% content_for :loginbox do %>
+  <%= link_to "Not right now", root_path %>
+<% end %>
 
 <% form_for @user_session do |f| %>
   <%= f.error_messages %>

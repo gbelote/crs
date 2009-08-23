@@ -12,6 +12,21 @@
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <%- end -%>
       
+      <div id="loginbox">
+        <% if @content_for_loginbox.nil? %>
+          <% if current_user %>
+            <i>Welcome, <%= current_user.username %>!</i>
+            <%= link_to "Edit profile", edit_user_path(current_user) %> |
+            <%= link_to "Logout", logout_path %>
+          <% else %>
+            <%= link_to "Register", new_user_path %> |
+            <%= link_to "Login", login_path %>
+          <% end %>
+        <% else %>
+          <%= yield :loginbox %>
+        <% end %>
+      </div>
+
       <%- if show_title? -%>
         <h1><%=h yield(:title) %></h1>
       <%- end -%>
